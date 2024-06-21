@@ -1,0 +1,38 @@
+﻿<Window x:Class="GraphicRedactor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GraphicRedactor"
+                mc:Ignorable="d"
+        Title="Графический планшет" Height="650" Width="900">
+    <Grid>
+        <Menu Background="White" BorderBrush="Navy" BorderThickness="1">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Сохранить" Click="SaveFile"></MenuItem>
+                <MenuItem Header="Загрузить" Click="LoadFile"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Цвет кисти">
+                <MenuItem Header="Красный" Click="MenuItemRed_CLick"></MenuItem>
+                <MenuItem Header="Синий" Click="MenuItemBlue_CLick"></MenuItem>
+                <MenuItem Header="Зелёный" Click="MenuItemGreen_CLick"></MenuItem>
+                <MenuItem Header="Чёрный" Click="MenuItemBlack_CLick"></MenuItem>
+                <MenuItem Header="Жёлтый" Click="MenuItemYellow_CLick"></MenuItem>
+                <MenuItem Header="Оранжевый" Click="MenuItemOrange_CLick"></MenuItem>
+                <MenuItem Header="Закрыть" Click="ExitItemRed_CLick"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Режим рисования">
+                <MenuItem Header="Рисование" Click="MenuItemDraw"></MenuItem>
+                <MenuItem Header="Редактирование" Click="MenuItemRedact"></MenuItem>
+                <MenuItem Header="Удаление" Click="MenuItemDelete"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Slider Name="MainSlider" Minimum="1" Maximum="100" Value="15" ValueChanged="SliderValueChanged" IsSelectionRangeEnabled="True" Margin="102,35,480,350" SmallChange="1"/>
+        <InkCanvas Name="MainInk" Margin="0,74,0,0">
+            <InkCanvas.DefaultDrawingAttributes>
+                <DrawingAttributes Color="Red" Height="10" Width="10"></DrawingAttributes>
+            </InkCanvas.DefaultDrawingAttributes>
+            <Border BorderBrush="Black" BorderThickness="1"/>
+        </InkCanvas>
+    </Grid>
+</Window>
